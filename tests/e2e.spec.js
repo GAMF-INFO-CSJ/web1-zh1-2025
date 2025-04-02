@@ -28,9 +28,9 @@ test.describe('Web1-ZH1-2025 E2E Tests', () => {
         await expect(h2).toHaveCSS('margin-bottom', '3px');
 
         const listItem = page.locator('.orders li');
-        await expect(listItem).toHaveCSS('display', 'inline');
-        await expect(listItem).toHaveCSS('color', 'rgb(255, 0, 0)');
-        await expect(listItem).toHaveCSS('font-size', '15px');
+        await expect(listItem.first()).toHaveCSS('display', 'inline');
+        await expect(listItem.first()).toHaveCSS('color', 'rgb(255, 0, 0)');
+        await expect(listItem.first()).toHaveCSS('font-size', '15px');
     });
 
     test('Users.html Bootstrap structure @bootstrap', async ({ page }) => {
@@ -46,15 +46,15 @@ test.describe('Web1-ZH1-2025 E2E Tests', () => {
         expect(rows).toBeGreaterThanOrEqual(10);
 
         const actionButtons = table.locator('tbody tr td .btn-group');
-        await expect(actionButtons).toBeVisible();
+        await expect(actionButtons.first()).toBeVisible();
 
         const editButton = table.locator('tbody tr td .btn-primary .fa-pencil');
-        await expect(editButton).toBeVisible();
+        await expect(editButton.first()).toBeVisible();
 
         const deleteButton = table.locator('tbody tr td .btn-danger .fa-trash');
-        await expect(deleteButton).toBeVisible();
+        await expect(deleteButton.first()).toBeVisible();
 
         const detailsButton = table.locator('tbody tr td .btn-info .fa-eye');
-        await expect(detailsButton).toBeVisible();
+        await expect(detailsButton.first()).toBeVisible();
     });
 });
